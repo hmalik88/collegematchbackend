@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_203024) do
+ActiveRecord::Schema.define(version: 2019_01_01_051954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "checklists", force: :cascade do |t|
+    t.string "task"
+    t.integer "college_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "college_tracks", force: :cascade do |t|
     t.integer "college_id"
@@ -28,6 +35,14 @@ ActiveRecord::Schema.define(version: 2018_12_31_203024) do
     t.string "state"
     t.integer "zip_code"
     t.text "info"
+    t.integer "tuition"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.integer "college_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
