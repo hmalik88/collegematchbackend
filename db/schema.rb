@@ -10,22 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_03_152134) do
+ActiveRecord::Schema.define(version: 2019_03_28_005504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "checklists", force: :cascade do |t|
-    t.string "task"
-    t.integer "college_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "college_tracks", force: :cascade do |t|
     t.integer "college_id"
     t.integer "user_id"
     t.string "career_name"
+    t.string "checklist"
     t.index ["college_id"], name: "index_college_tracks_on_college_id"
     t.index ["user_id"], name: "index_college_tracks_on_user_id"
   end
