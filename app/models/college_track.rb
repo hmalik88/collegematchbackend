@@ -1,5 +1,5 @@
 class CollegeTrack < ApplicationRecord
 belongs_to :user
-belongs_to :college
+has_many :tasks
 
 end
