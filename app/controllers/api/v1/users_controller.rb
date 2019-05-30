@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def index
-      render json: User.includes(:colleges), include: ['colleges']
+      render json: User.includes(:college_tracks), include: ['college_tracks']
     end
 
     def dashboard

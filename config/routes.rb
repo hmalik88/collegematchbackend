@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users
       post '/login', to: 'auth#create'
       post '/tracks', to: 'college_tracks#create'
+      get '/tracks', to: 'college_tracks#index'
       post '/tasks', to: 'tasks#create'
       get '/dashboard', to: 'users#dashboard'
       get '/current_user', to: "auth#show"
